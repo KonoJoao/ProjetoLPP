@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../style/Style.css" >
+    <link rel="icon" href="../imagens/icon2.png" type="image/x-icon" />
     <title>Pokedex</title>
 </head>
 <body>
     <main class="pokedex">
-        <img src="../imagens/pokedex.png">
-        <div class="textoDescritivoDoPokemon"></div>
+        <img id="imagemPokedex" src="../imagens/pokedex.png">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/6.gif" class="imagemDoPokemon" alt="pokemon">
+        <h1 class="dadosPokemon">
+            <span class="numeroPokemon">6</span> -
+            <span class="nomePokemon">Charizard</span>
+        </h1>
+        <form class="formulario">
+            <input
+            type="search"
+            class="input_search"
+            placeholder="Digite o nome ou número do pokemon"
+            required
+            />
+        </form>
         <div class="navegarPelosPokenons">
             <button onClick="PokemonProximo()"></button>
             <button onClick="PokemonAnterior()"></button>

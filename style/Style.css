@@ -1,16 +1,51 @@
 body {
+    @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap');
+    font-family: 'Oxanium', cursive;
+    text-align: center;
     background-image: url(../imagens/background2.jpg);
 }
 
-.pokedex{
-    height:100%;
-    margin: 0 auto;
+ .pokedex{
+    display: inline-block;
+    position: relative;
 }
 
+#imagemPokedex{
+     width: 100%;
+    max-width: 400px;
+} 
+
 .pokedex img{
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 7%;
+    width: 25%;
+} 
+
+.imagemDoPokemon{
+    position: absolute;
+    bottom: 55%;
+    left: 35%;
+    /* height: 18%; */
+}
+
+.dadosPokemon{
+    color: #BA110C;
+    position: absolute;
+    top: 50%;
+    left: 32%;
+    font-size: clamp(20px, 5vw, 25px);
+}
+
+.formulario{
+    position: absolute;
+    width: 60%;
+    top: 63%;
+    left: 21%;
+}
+
+.input_search{
+    width: 100%;
+    padding: 2%;
+    border: 3px solid #3a444d;
+    font-weight: 600;
+    border-radius: 5px;
+    color: #3a444d;
 }

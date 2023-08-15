@@ -3,7 +3,7 @@ const fetchPokemon = async (pokemon) => {
 
     dados = await respostaAPI.json();
 
-    console.log(dados);
+    return dados;
 }
 
 fetchPokemon("ditto");
