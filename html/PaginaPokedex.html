@@ -11,7 +11,7 @@
 <body>
     <main class="pokedex">
         <img id="imagemPokedex" src="../imagens/pokedex.png">
-        <img src="#" class="imagemDoPokemon" alt="pokemon">
+        <a class="linkPaginaPokemon" href="https://www.pokemon.com/br/pokedex/wartortle" target="_blank"><img src="#" class="imagemDoPokemon" alt="pokemon"></a>
         <h1 class="dadosPokemon">
             <span class="numeroPokemon">6</span> -
             <span class="nomePokemon">Charizard</span>
@@ -29,12 +29,12 @@
             <button class="botao" onClick="retirarPokemon()">Remover</button>
         </div>
         <div class="barraPokemons">
-            <img class="pokemon1">
-            <img class="pokemon2">
-            <img class="pokemon3">
-            <img class="pokemon4">
-            <img class="pokemon5">
-            <img class="pokemon6">
+            <img onClick="verPokemonDaBarra(0)" class="pokemon1">
+            <img onClick="verPokemonDaBarra(1)" class="pokemon2">
+            <img onClick="verPokemonDaBarra(2)" class="pokemon3">
+            <img onClick="verPokemonDaBarra(3)" class="pokemon4">
+            <img onClick="verPokemonDaBarra(4)" class="pokemon5">
+            <img onClick="verPokemonDaBarra(5)" class="pokemon6">
         </div>
     </main>
 

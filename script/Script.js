@@ -2,6 +2,7 @@ const nomePokemon = document.querySelector(".nomePokemon");
 const numeroPokemon = document.querySelector(".numeroPokemon");
 const imagemPokemon = document.querySelector(".imagemDoPokemon");
 const formularioNomePokemon = document.querySelector(".formulario");
+const paginaPokemon = document.querySelector(".linkPaginaPokemon");
 const entrada = document.querySelector(".input_search");
 const slotsPokemon = [document.querySelector(".pokemon1"), document.querySelector(".pokemon2"), document.querySelector(".pokemon3"), document.querySelector(".pokemon4"), document.querySelector(".pokemon5"), document.querySelector(".pokemon6")]
 
@@ -11,16 +12,17 @@ var i=0;
 const adicionarPokemon = async () => {
     var dadosPoke = await pegarDadosPokemon(nomePokemon.innerHTML);
     console.log("deu");
-    if(arrayPokemons.length%6 == 0 && arrayPokemons.length != 0){
-    arrayPokemons.splice(i, 1, dadosPoke);
-    adicionarPokemonNaBarra(dadosPoke);
+
+    arrayPokemons[i] = dadosPoke;
+    arrayPokemons.length = 6;
+    
+    await adicionarPokemonNaBarra(dadosPoke);
+
     i++;
-    } else {
-        arrayPokemons.push(dadosPoke);
-        adicionarPokemonNaBarra(dadosPoke);
-    }
-    if(i%6==0)
+
+    if(i==6){
         i=0;
+    }
 
 }
 
@@ -39,6 +41,7 @@ const adicionarPokemonNaTela = async (pokemon) => {
 
     nomePokemon.innerHTML = dados.name;
     numeroPokemon.innerHTML = dados.id;
+    paginaPokemon.href = `https://www.pokemon.com/br/pokedex/${dados.name}`;
     if(dados['sprites']['versions']['generation-v']['black-white']['animated']['front_default'] != null)
         imagemPokemon.src = dados['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
     else
@@ -53,8 +56,24 @@ const adicionarPokemonNaBarra = async (pokemon) => {
     slotsPokemon[i].src = dados['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
     else
     slotsPokemon[i].src = dados['sprites']['front_default'];
+}
 
-    
+const verPokemonDaBarra = async (numeroPokemon) => {
+    console.log(arrayPokemons[numeroPokemon].name);
+    console.log(arrayPokemons);
+    await adicionarPokemonNaTela(arrayPokemons[numeroPokemon].name);
+}
+
+const retirarPokemon = async () => {
+    indiceNumero = arrayPokemons.findIndex(entrada.value);
+    indiceNome = arrayPokemons.name.findIndex(entrada.value.toLowerCase());
+    if(indiceNumero != -1){
+        arrayPokemons[indiceNumero] = null;
+        slotsPokemon[indiceNumero].src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/201.png";
+    } else if(indiceNome != -1){
+        arrayPokemons[indiceNome] = null;
+        slotsPokemon[indiceNome].src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/201.png";
+}
 }
 
 adicionarPokemonNaTela('riolu');
