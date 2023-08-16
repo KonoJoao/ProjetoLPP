@@ -23,14 +23,14 @@ body {
     position: absolute;
     bottom: 55%;
     left: 35%;
-    /* height: 18%; */
+    max-width: 85px;
 }
 
 .dadosPokemon{
     color: #BA110C;
     position: absolute;
     top: 50%;
-    left: 32%;
+    left: 27%;
     font-size: clamp(20px, 5vw, 25px);
 }
 
@@ -48,4 +48,11 @@ body {
     font-weight: 600;
     border-radius: 5px;
     color: #3a444d;
+}
+
+.opcoesPokemon{
+    position: absolute;
+    top: 70%;
+    left: 27%;
+    width: 40%;
 }

@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../style/Style.css" >
     <link rel="icon" href="../imagens/icon2.png" type="image/x-icon" />
+    <script defer src="../script/Script.js"></script>
     <title>Pokedex</title>
 </head>
 <body>
     <main class="pokedex">
         <img id="imagemPokedex" src="../imagens/pokedex.png">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/6.gif" class="imagemDoPokemon" alt="pokemon">
+        <img src="#" class="imagemDoPokemon" alt="pokemon">
         <h1 class="dadosPokemon">
             <span class="numeroPokemon">6</span> -
             <span class="nomePokemon">Charizard</span>
@@ -23,9 +24,9 @@
             required
             />
         </form>
-        <div class="navegarPelosPokenons">
-            <button onClick="PokemonProximo()"></button>
-            <button onClick="PokemonAnterior()"></button>
+        <div class="opcoesPokemon">
+            <button onClick="retirarPokemon()">Adicionar</button>
+            <button onClick="adicionarPokemon()">Remover</button>
         </div>
     </main>
 
