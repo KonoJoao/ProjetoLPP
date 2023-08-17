@@ -65,15 +65,11 @@ const verPokemonDaBarra = async (numeroPokemon) => {
 }
 
 const retirarPokemon = async () => {
-    indiceNumero = arrayPokemons.findIndex(entrada.value);
-    indiceNome = arrayPokemons.name.findIndex(entrada.value.toLowerCase());
-    if(indiceNumero != -1){
-        arrayPokemons[indiceNumero] = null;
-        slotsPokemon[indiceNumero].src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/201.png";
-    } else if(indiceNome != -1){
-        arrayPokemons[indiceNome] = null;
-        slotsPokemon[indiceNome].src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/201.png";
-}
+    for(i=0;i<6;i++){
+        slotsPokemon[i].src = "";
+        arrayPokemons[i] = null;
+    }
+    i=0;
 }
 
 adicionarPokemonNaTela('riolu');
